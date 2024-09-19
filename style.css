@@ -337,10 +337,15 @@ ul li span {
     width: 150px;
 }
 
+
 .tool img {
     width: 150px;
     letter-spacing: 2rem;
 } */
+
+.tools {
+    margin-top: 3rem;
+}
 
 .logos .hide-img .blend-mode {
     line-height: 10px;
@@ -450,113 +455,6 @@ ul li span {
     }
 }
 
-
-#body1 {
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.slider {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    transform-style: preserve-3d;
-    animation: rotate 25s linear infinite;
-    margin-top: 400px;  
-}
-
-@keyframes rotate {
-    0% {
-        transform: perspective(1000px) rotateY(0deg);
-    }
-    100% {
-        transform: perspective(1000px) rotateY(360deg);
-    }
-}
-
-.slider span {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 200px;
-    height: 200px;
-    transform-origin: center;
-    transform: rotateY(calc(var(--i) * 45deg)) translateZ(450px);
-    overflow: hidden; /* Ensures images do not overflow */
-}
-
-.slider span img {
-    display: flex;
-    width: 100%;
-    height: 25%;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-/* Media Queries */
-
-/* Mobile devices */
-@media (max-width: 480px) {
-    .slider {
-        width: 200px;
-        height: 200px;
-        margin-top: 200px;
-    }
-
-    .slider span {
-        width: 150px;
-        height: 150px;
-        transform: rotateY(calc(var(--i) * 45deg)) translateZ(300px);
-    }
-}
-
-/* Tablets (portrait) */
-@media (min-width: 481px) and (max-width: 768px) {
-    .slider {
-        width: 250px;
-        height: 250px;
-        margin-top: 400px;
-    }
-
-    .slider span {
-        width: 200px;
-        height: 200px;
-        transform: rotateY(calc(var(--i) * 45deg)) translateZ(350px);
-    }
-}
-
-/* Tablets (landscape) and small desktops */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .slider {
-        width: 300px;
-        height: 300px;
-    }
-
-    .slider span {
-        width: 250px;
-        height: 250px;
-        transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
-    }
-}
-
-/* Desktops */
-@media (min-width: 1025px) {
-    .slider {
-        width: 400px;
-        height: 400px;
-    }
-
-    .slider span {
-        width: 300px;
-        height: 300px;
-        transform: rotateY(calc(var(--i) * 45deg)) translateZ(450px);
-    }
-}
-
-
 .extra {
     display: none;
     /* Initially hidden */
@@ -595,6 +493,128 @@ ul li span {
 }
 
 
+.scroll img{
+    
+    margin-left: 2rem;
+}
+
+/* Default for larger screens (desktops) */
+
+  
+  @media only screen and (max-width: 768px) {
+    /* Tablet view */
+    .scroll img {
+      height: 100px;
+      width: auto;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    /* Mobile view */
+    .scroll img {
+      height: 70px;
+      width: auto;
+    }
+  }
+  
+  /* General styling for marquee */
+  .scroll {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  marquee {
+    display: flex;
+    align-items: center;
+  }
+  
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Ensures the content and image align at the top */
+}
+
+.content-section {
+    width: 60%; /* Adjust as needed */
+    padding-right: 20px; /* Space between content and image */
+}
+
+.image-section {
+    width: 35%; /* Adjust as needed */
+    text-align: right;
+}
+
+.image-section img {
+    max-width: 100%; /* Ensures the image scales properly */
+    height: auto;
+}
 
 
 
+
+
+
+
+
+
+
+/* General styles */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Content Section */
+.content-section {
+    flex: 1;
+}
+
+.image-section {
+    flex: 0.5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Responsive for tablets (up to 768px) */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column; /* Stack content vertically */
+        align-items: center;
+    }
+
+    .image-wrapper {
+        margin-top: 20px; /* Add space between text and image */
+    }
+
+    .image-section img {
+        width: 80%; /* Adjust image size for tablets */
+        height: 80%;
+    }
+}
+
+/* Responsive for mobile devices (up to 480px) */
+@media (max-width: 480px) {
+    .flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-section {
+        text-align: center; /* Center-align text for smaller screens */
+    }
+
+    .image-section img {
+        width: 100%; /* Full width image for small screens */
+        height: auto;
+    }
+
+    .list-section ul {
+        padding: 0; /* Remove padding on lists */
+    }
+
+    .list-section li {
+        font-size: 16px; /* Adjust font size for better readability on mobile */
+    }
+}
